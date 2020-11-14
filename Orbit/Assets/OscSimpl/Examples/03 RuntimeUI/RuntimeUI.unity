@@ -38,12 +38,12 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 11
+  serializedVersion: 12
   m_GIWorkflowMode: 0
   m_GISettings:
     serializedVersion: 2
@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_LightingSettings: {fileID: 4890085278179872738, guid: b9c4df0c9043ee54fbff7816ccc58dd9, type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -118,6 +118,8 @@ NavMeshSettings:
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
+    maxJobWorkers: 0
+    preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
@@ -161,8 +163,7 @@ RectTransform:
 --- !u!1 &249371919
 GameObject:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 132296, guid: f6d0f317739304586831da180fd62b3f,
-    type: 2}
+  m_CorrespondingSourceObject: {fileID: 132296, guid: f6d0f317739304586831da180fd62b3f, type: 2}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
@@ -180,8 +181,7 @@ GameObject:
 --- !u!224 &249371920
 RectTransform:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 22447106, guid: f6d0f317739304586831da180fd62b3f,
-    type: 2}
+  m_CorrespondingSourceObject: {fileID: 22447106, guid: f6d0f317739304586831da180fd62b3f, type: 2}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 249371919}
@@ -200,8 +200,7 @@ RectTransform:
 --- !u!114 &249371921
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 11478632, guid: f6d0f317739304586831da180fd62b3f,
-    type: 2}
+  m_CorrespondingSourceObject: {fileID: 11478632, guid: f6d0f317739304586831da180fd62b3f, type: 2}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 249371919}
@@ -213,6 +212,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -239,8 +240,7 @@ MonoBehaviour:
 --- !u!222 &249371922
 CanvasRenderer:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 22228148, guid: f6d0f317739304586831da180fd62b3f,
-    type: 2}
+  m_CorrespondingSourceObject: {fileID: 22228148, guid: f6d0f317739304586831da180fd62b3f, type: 2}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 249371919}
@@ -332,8 +332,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 4f69f99837eaa4ce8a200255d9a41fd9, type: 3}
 --- !u!224 &282995825 stripped
 RectTransform:
-  m_CorrespondingSourceObject: {fileID: 22415244, guid: 4f69f99837eaa4ce8a200255d9a41fd9,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 22415244, guid: 4f69f99837eaa4ce8a200255d9a41fd9, type: 3}
   m_PrefabInstance: {fileID: 282995824}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &352020744
@@ -548,6 +547,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.9264706, g: 0.9264706, b: 0.9264706, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -571,15 +572,13 @@ CanvasRenderer:
   m_CullTransparentMesh: 0
 --- !u!224 &650973378 stripped
 RectTransform:
-  m_CorrespondingSourceObject: {fileID: 22407056, guid: 4cfa9e2f06b21470f8741fe2f75be489,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 22407056, guid: 4cfa9e2f06b21470f8741fe2f75be489, type: 3}
   m_PrefabInstance: {fileID: 398162928}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &984054529
 GameObject:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 132296, guid: f6d0f317739304586831da180fd62b3f,
-    type: 2}
+  m_CorrespondingSourceObject: {fileID: 132296, guid: f6d0f317739304586831da180fd62b3f, type: 2}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
@@ -597,8 +596,7 @@ GameObject:
 --- !u!224 &984054530
 RectTransform:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 22447106, guid: f6d0f317739304586831da180fd62b3f,
-    type: 2}
+  m_CorrespondingSourceObject: {fileID: 22447106, guid: f6d0f317739304586831da180fd62b3f, type: 2}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 984054529}
@@ -617,8 +615,7 @@ RectTransform:
 --- !u!114 &984054531
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 11478632, guid: f6d0f317739304586831da180fd62b3f,
-    type: 2}
+  m_CorrespondingSourceObject: {fileID: 11478632, guid: f6d0f317739304586831da180fd62b3f, type: 2}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 984054529}
@@ -630,6 +627,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -650,8 +649,7 @@ MonoBehaviour:
 --- !u!222 &984054532
 CanvasRenderer:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 22228148, guid: f6d0f317739304586831da180fd62b3f,
-    type: 2}
+  m_CorrespondingSourceObject: {fileID: 22228148, guid: f6d0f317739304586831da180fd62b3f, type: 2}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 984054529}
@@ -706,9 +704,9 @@ MonoBehaviour:
   _mode: 0
   _remoteIpAddress: 127.0.0.1
   _remoteStatus: 2
-  _multicastLoopback: 1
+  _bundleMessagesAutomatically: 1
   _settingsFoldout: 0
-  _messagesFoldout: 1
+  _messagesFoldout: 0
 --- !u!114 &1063562624
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -731,7 +729,7 @@ MonoBehaviour:
   _mappings: []
   _settingsFoldout: 1
   _mappingsFoldout: 0
-  _messagesFoldout: 1
+  _messagesFoldout: 0
 --- !u!1 &1280448307
 GameObject:
   m_ObjectHideFlags: 0
@@ -882,7 +880,8 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1637071340}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
         m_MethodName: set_enabled
         m_Mode: 0
         m_Arguments:
@@ -946,6 +945,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1063,6 +1064,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []

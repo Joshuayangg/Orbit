@@ -1,6 +1,6 @@
 ﻿/*
 	Created by Carl Emil Carlsen.
-	Copyright 2016-2019 Sixth Sensor.
+	Copyright 2016-2020 Sixth Sensor.
 	All rights reserved.
 	http://sixthsensor.dk
 */

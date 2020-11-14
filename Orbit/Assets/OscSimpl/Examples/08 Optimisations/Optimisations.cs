@@ -1,6 +1,6 @@
 ﻿/*
 	Created by Carl Emil Carlsen.
-	Copyright 2016-2019 Sixth Sensor.
+	Copyright 2016-2020 Sixth Sensor.
 	All rights reserved.
 	http://sixthsensor.dk
 */
@@ -11,14 +11,14 @@ namespace OscSimpl.Examples
 {
 	public class Optimisations : MonoBehaviour
 	{
-		// We will be sinding this string as an example.
+		// We will be sending this string as an example.
 		public string outgoingText = "Hello";
 
 		// Always store outgoing messages that contain more than one argument.
 		OscMessage _outgoingMessage;
 
-		// Always cache incoming strings and blobs so only generate garbage
-		// when strings change content and blobs change length.
+		// Always cache incoming strings and blobs so that we only generate 
+		// garbage when the strings change content and blobs change length.
 		string _incomingText;
 
 		// Always store strings that never change in constants. 

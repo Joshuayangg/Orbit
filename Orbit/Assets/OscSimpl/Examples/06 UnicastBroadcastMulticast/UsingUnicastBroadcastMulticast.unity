@@ -38,12 +38,12 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 11
+  serializedVersion: 12
   m_GIWorkflowMode: 0
   m_GISettings:
     serializedVersion: 2
@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_LightingSettings: {fileID: 4890085278179872738, guid: b9c4df0c9043ee54fbff7816ccc58dd9, type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -118,6 +118,8 @@ NavMeshSettings:
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
+    maxJobWorkers: 0
+    preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
@@ -230,8 +232,7 @@ Transform:
 --- !u!1 &914916867
 GameObject:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 125990, guid: aaaf1ae2bad834a1fb2a60dcfe7da60c,
-    type: 2}
+  m_CorrespondingSourceObject: {fileID: 125990, guid: aaaf1ae2bad834a1fb2a60dcfe7da60c, type: 2}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
@@ -247,8 +248,7 @@ GameObject:
 --- !u!224 &914916868
 RectTransform:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 22499580, guid: aaaf1ae2bad834a1fb2a60dcfe7da60c,
-    type: 2}
+  m_CorrespondingSourceObject: {fileID: 22499580, guid: aaaf1ae2bad834a1fb2a60dcfe7da60c, type: 2}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 914916867}
@@ -269,8 +269,7 @@ RectTransform:
 --- !u!1 &950315672
 GameObject:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 109418, guid: aaaf1ae2bad834a1fb2a60dcfe7da60c,
-    type: 2}
+  m_CorrespondingSourceObject: {fileID: 109418, guid: aaaf1ae2bad834a1fb2a60dcfe7da60c, type: 2}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
@@ -288,8 +287,7 @@ GameObject:
 --- !u!224 &950315673
 RectTransform:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 22446960, guid: aaaf1ae2bad834a1fb2a60dcfe7da60c,
-    type: 2}
+  m_CorrespondingSourceObject: {fileID: 22446960, guid: aaaf1ae2bad834a1fb2a60dcfe7da60c, type: 2}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 950315672}
@@ -308,8 +306,7 @@ RectTransform:
 --- !u!114 &950315674
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 11452998, guid: aaaf1ae2bad834a1fb2a60dcfe7da60c,
-    type: 2}
+  m_CorrespondingSourceObject: {fileID: 11452998, guid: aaaf1ae2bad834a1fb2a60dcfe7da60c, type: 2}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 950315672}
@@ -321,6 +318,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -351,8 +350,7 @@ MonoBehaviour:
 --- !u!222 &950315675
 CanvasRenderer:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 22219336, guid: aaaf1ae2bad834a1fb2a60dcfe7da60c,
-    type: 2}
+  m_CorrespondingSourceObject: {fileID: 22219336, guid: aaaf1ae2bad834a1fb2a60dcfe7da60c, type: 2}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 950315672}
@@ -403,8 +401,7 @@ Transform:
 --- !u!1 &1336797273
 GameObject:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 107036, guid: aaaf1ae2bad834a1fb2a60dcfe7da60c,
-    type: 2}
+  m_CorrespondingSourceObject: {fileID: 107036, guid: aaaf1ae2bad834a1fb2a60dcfe7da60c, type: 2}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
@@ -422,8 +419,7 @@ GameObject:
 --- !u!224 &1336797274
 RectTransform:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 22494286, guid: aaaf1ae2bad834a1fb2a60dcfe7da60c,
-    type: 2}
+  m_CorrespondingSourceObject: {fileID: 22494286, guid: aaaf1ae2bad834a1fb2a60dcfe7da60c, type: 2}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1336797273}
@@ -442,8 +438,7 @@ RectTransform:
 --- !u!114 &1336797275
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 11419098, guid: aaaf1ae2bad834a1fb2a60dcfe7da60c,
-    type: 2}
+  m_CorrespondingSourceObject: {fileID: 11419098, guid: aaaf1ae2bad834a1fb2a60dcfe7da60c, type: 2}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1336797273}
@@ -455,6 +450,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -475,8 +472,7 @@ MonoBehaviour:
 --- !u!222 &1336797276
 CanvasRenderer:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 22265984, guid: aaaf1ae2bad834a1fb2a60dcfe7da60c,
-    type: 2}
+  m_CorrespondingSourceObject: {fileID: 22265984, guid: aaaf1ae2bad834a1fb2a60dcfe7da60c, type: 2}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1336797273}

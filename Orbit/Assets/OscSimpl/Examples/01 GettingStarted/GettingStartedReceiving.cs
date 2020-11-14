@@ -47,7 +47,7 @@ namespace OscSimpl.Examples
 		
 		void OnTest1( float value )
 		{
-			Debug.Log( "Received test1\n" + value + "\n" );
+			Debug.Log( "Received test1\n" + value + "\n" ); // Composing strings like this generates garbage, use StringBuider IRL.
 		}
 
 
