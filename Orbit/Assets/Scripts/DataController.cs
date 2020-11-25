@@ -6,21 +6,29 @@ public class DataController : MonoBehaviour
 {
 
     public Transform player;
-    public Transform planet;
+    public List<Transform> planets;
+
+    private static int NUM_PLANETS = 2;
 
 
     OscOut oscOut;
 
-    OscMessage _planet; // xpos, ypos, dist, radius
+    List<OscMessage> _planets; // xpos, ypos, dist, radius
 
     // Start is called before the first frame update
     void Start()
     {
         oscOut = GameObject.Find("OscOut").GetComponent<OscOut>();
 
-        // Initialize Osc Message
-        _planet = new OscMessage("/planet");
-        _planet.Add(0).Add(0).Add(0).Add(0);
+        // Initialize Osc Messages
+        _planets = new List<OscMessage> ();
+        for (int i = 0; i < NUM_PLANETS; i++)
+        {
+            OscMessage _planet = new OscMessage("/planet" + i);
+            _planet.Add(0).Add(0).Add(0).Add(0);
+            _planets.Add(_planet);
+        }
+        
 
     }
 
@@ -34,42 +42,43 @@ public class DataController : MonoBehaviour
         //Debug.Log("Relative distance: " + getRelativeDistance());
 
         // Set and send data to Max
-        _planet.Set(0, getRelativePositionX()); // range - [-5, 5]
-        _planet.Set(1, getRelativePositionY()); // range ~ [0.01, 1.9]
-        _planet.Set(2, getRelativeDistance()); // range - [0, 5]
-        _planet.Set(3, getPlanetRadius()); // range - [0.01, 4]
+        int i = 0;
+        foreach (OscMessage _planet in _planets)
+        {
+            _planet.Set(0, getRelativePositionY(i)); // range ~ [-2, 2]
+            _planet.Set(1, getRelativeDistance(i)); // range - [0, 5]
+            _planet.Set(2, getPlanetRadius(i)); // range - [0.01, 4]
+            _planet.Set(3, getRotationSpeed(i)); // range - [0, 15]
 
-        oscOut.Send(_planet);
+            oscOut.Send(_planet);
+            i++;
+        }
     }
 
-    public float getAvgRotation()
+    public float getRotationSpeed(int i)
     {
-        return (planet.eulerAngles.x + planet.eulerAngles.y + planet.eulerAngles.z / 3f);
+        float planetRotationSpeed = planets[i].GetComponent<Rigidbody>().angularVelocity.magnitude;
+        return Mathf.Clamp(planetRotationSpeed, 0, 15f);
     }
 
-    public float getRelativePositionX()
+    public float getRelativePositionY(int i)
     {
-        return Mathf.Clamp((planet.position.x - player.position.x), -5f, 5f);
+        return Mathf.Clamp((planets[i].position.y - player.position.y), -2f, 2f);
     }
 
-    public float getRelativePositionY()
+    public float getRelativePositionZ(int i)
     {
-        return (planet.position.y - player.position.y);
+        return (planets[i].position.z - player.position.z);
     }
 
-    public float getRelativePositionZ()
+    public float getRelativeDistance(int i)
     {
-        return (planet.position.z - player.position.z);
+        return Mathf.Clamp(Vector3.Distance(planets[i].position, player.position), 0f, 5f);
     }
 
-    public float getRelativeDistance()
+    public float getPlanetRadius(int i)
     {
-        return Mathf.Clamp(Vector3.Distance(planet.position, player.position), 0f, 5f);
-    }
-
-    public float getPlanetRadius()
-    {
-        return planet.GetComponent<PlanetController>().getPlanetRadius();
+        return planets[i].GetComponent<PlanetController>().getPlanetRadius();
     }
 
 }
