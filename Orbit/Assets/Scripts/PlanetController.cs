@@ -89,7 +89,7 @@ public class PlanetController : MonoBehaviour
             planet.SetFloat("sphere_radius", planetRadius);
 
             // Change sphere collider size as well.
-            this.GetComponent<SphereCollider>().radius = Mathf.Clamp(planetRadius, 0.08f, 0.3f);
+            this.GetComponent<SphereCollider>().radius = Mathf.Clamp(planetRadius, 0.04f, 0.3f);
 
             // Add some haptics
             OVRInput.SetControllerVibration(0.3f, Mathf.Abs(11f * controllerDistChangeRate), OVRInput.Controller.RTouch);
@@ -102,5 +102,10 @@ public class PlanetController : MonoBehaviour
     public float getPlanetRadius()
     {
         return planetRadius;
+    }
+
+    public void setPlanetFreq(float freq)
+    {
+        planet.SetFloat("freq", freq);
     }
 }

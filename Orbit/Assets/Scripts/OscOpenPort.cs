@@ -13,6 +13,6 @@ public class OscOpenPort : MonoBehaviour
         oscIn = GameObject.Find("OscIn").GetComponent<OscIn>();
 
         oscOut.Open(7000);
-        oscIn.Open(8000);
+        oscIn.Open(7400);
     }
 }

@@ -709,15 +709,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b64988e220a2942f9856e0017b596ba8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _openOnAwake: 0
+  _openOnAwake: 1
   _udpBufferSize: 8192
-  _port: 7000
+  _port: 7400
   _mode: 0
   _multicastAddress: 
   _filterDuplicates: 0
   _addTimeTagsToBundledMessages: 0
   _mappings: []
-  _settingsFoldout: 0
+  _settingsFoldout: 1
   _mappingsFoldout: 0
   _messagesFoldout: 0
 --- !u!4 &828074530

@@ -12,6 +12,7 @@ public class DataController : MonoBehaviour
 
 
     OscOut oscOut;
+    OscIn oscIn;
 
     List<OscMessage> _planets; // xpos, ypos, dist, radius
 
@@ -19,6 +20,9 @@ public class DataController : MonoBehaviour
     void Start()
     {
         oscOut = GameObject.Find("OscOut").GetComponent<OscOut>();
+        oscIn = GameObject.Find("OscIn").GetComponent<OscIn>();
+        oscIn.MapDouble("/planet0", OnReceivePlanet0);
+        oscIn.MapDouble("/planet1", OnReceivePlanet1);
 
         // Initialize Osc Messages
         _planets = new List<OscMessage> ();
@@ -32,14 +36,21 @@ public class DataController : MonoBehaviour
 
     }
 
+    void OnReceivePlanet0(double value)
+    {
+        float freq = (float)value * 15f;
+        planets[0].GetComponent<PlanetController>().setPlanetFreq(freq);
+    }
+
+    void OnReceivePlanet1(double value)
+    {
+        float freq = (float)value * 5f;
+        planets[1].GetComponent<PlanetController>().setPlanetFreq(freq);
+    }
+
     // Update is called once per frame
     void Update()
     {
-
-        //Debug.Log("AvgRotation: " + getAvgRotation());
-        //Debug.Log("Relative position Y: " + getRelativePositionY());
-        //Debug.Log("Relative position X: " + getRelativePositionX());
-        //Debug.Log("Relative distance: " + getRelativeDistance());
 
         // Set and send data to Max
         int i = 0;
