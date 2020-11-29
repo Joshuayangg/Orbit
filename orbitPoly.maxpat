@@ -45,7 +45,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 445.186522999999852, 490.0, 319.0, 62.0 ],
+					"patching_rect" : [ 408.186522999999852, 490.0, 319.0, 62.0 ],
 					"text" : "I then map the attributes to a reson and also feed it with pink noise to generate a tone. The output signal is also multiplied with gain, which is determined by the distance between the player and the sphere."
 				}
 
@@ -53,12 +53,12 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-32",
-					"linecount" : 5,
+					"linecount" : 6,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 384.186522999999852, 255.0, 319.0, 75.0 ],
-					"text" : "Within the poly, I determine the frequency based on the sphere yPos and the id of the poly. I also map amp and decay to be determined by the poly as well. As of right now, decay is always 0, but in the final I plan to use decay so I decided to keep it in here."
+					"patching_rect" : [ 385.186522999999852, 255.0, 319.0, 89.0 ],
+					"text" : "Within the poly, I determine the frequency based on the sphere yPos and the id of the poly. I also map amp and decay to be determined by the poly as well. The harmonicity is also determined by the rotation speed of planet0, meaning the more it spins the sharper the partials will be."
 				}
 
 			}
@@ -71,7 +71,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 755.0, 105.0, 150.0, 34.0 ]
+					"patching_rect" : [ 445.0, 153.0, 150.0, 34.0 ]
 				}
 
 			}
@@ -124,7 +124,6 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "FullPacket", "FullPacket" ],
 					"patching_rect" : [ 72.0, 262.0, 263.0, 73.0 ],
-					"presentation_linecount" : 4,
 					"text" : "/frequency = pow(/id, /harmonicity) * /fundamental,\n/amp = 1. / /id,\n/decay = pow(0.5, /id) * /decay_mul"
 				}
 
@@ -184,10 +183,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 77.5, 715.0, 42.0, 22.0 ],
-					"saved_object_attributes" : 					{
-						"attr_comment" : ""
-					}
-,
 					"text" : "out~ 1"
 				}
 
@@ -200,10 +195,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 72.0, 94.0, 28.0, 22.0 ],
-					"saved_object_attributes" : 					{
-						"attr_comment" : ""
-					}
-,
 					"text" : "in 1"
 				}
 
@@ -219,7 +210,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "signal", "float" ],
-					"patching_rect" : [ 428.0, 589.0, 56.0, 22.0 ],
+					"patching_rect" : [ 367.0, 587.0, 56.0, 22.0 ],
 					"sig" : 1.0
 				}
 
@@ -343,7 +334,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "int" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 411.0, 490.0, 28.0, 25.0 ],
+					"patching_rect" : [ 374.0, 490.0, 28.0, 25.0 ],
 					"rounded" : 60.0,
 					"text" : "3.2",
 					"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]

@@ -9,12 +9,15 @@ public class DataController : MonoBehaviour
     public List<Transform> planets;
 
     private static int NUM_PLANETS = 2;
+    private static int NUM_SCALES = 4;
+
+    public int scaleIndex = 0;
 
 
     OscOut oscOut;
     OscIn oscIn;
 
-    List<OscMessage> _planets; // xpos, ypos, dist, radius
+    List<OscMessage> _planets; // xpos, ypos, dist, radius, scaleIndex (only for planet0)
 
     // Start is called before the first frame update
     void Start()
@@ -30,10 +33,12 @@ public class DataController : MonoBehaviour
         {
             OscMessage _planet = new OscMessage("/planet" + i);
             _planet.Add(0).Add(0).Add(0).Add(0);
+            if (i == 0)
+            {
+                _planet.Add(scaleIndex);
+            }
             _planets.Add(_planet);
         }
-        
-
     }
 
     void OnReceivePlanet0(double value)
@@ -61,9 +66,23 @@ public class DataController : MonoBehaviour
             _planet.Set(2, getPlanetRadius(i)); // range - [0.01, 4]
             _planet.Set(3, getRotationSpeed(i)); // range - [0, 15]
 
+            if (i == 0)
+            {
+                _planet.Set(4, scaleIndex);
+            }
+
             oscOut.Send(_planet);
             i++;
         }
+
+        if (OVRInput.GetDown(OVRInput.Button.One)) {
+            nextScaleIndex();
+        }
+    }
+
+    public void nextScaleIndex()
+    {
+        scaleIndex = (scaleIndex + 1) % NUM_SCALES;
     }
 
     public float getRotationSpeed(int i)
